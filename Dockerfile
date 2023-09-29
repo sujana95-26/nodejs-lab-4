@@ -1,12 +1,12 @@
 # Use Python 3.6 or later as a base image
-FROM python:3.8
+FROM node:latest
 # Copy contents into image
- COPY . .
+COPY . .
 # Install pip dependencies from requirements
-RUN pip install -r requirements.txt
+RUN npm Install
 # Set YOUR_NAME environment variable
 ENV YOUR_NAME sujana
 # Expose the correct port
-EXPOSE 500	
+EXPOSE 5000	
 # Create an entrypoint
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["npm", "start"]
